@@ -11,4 +11,23 @@ class ProductController extends Controller
 		$prod = Product::all();
 		return view ('products', ['produits' => $prod]);
 	}
+
+	public function getShow($id){
+		$produits = Product::find($id);
+		return view ('oneproduct', ['produits' => $produits]);
+	}
+
+	public function stockless($id){
+		$produits = Product::find($id);
+		$produits->stock--;
+		$produits->save();
+		return back();
+	}
+
+	public function stockMore($id){
+		$produits = Product::find($id);
+		$produits->stock++;
+		$produits->save();
+		return back();
+	}
 }

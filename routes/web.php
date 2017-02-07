@@ -15,4 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/products', 'ProductController@getIndex');
+Route::get('/', 'ProductController@getIndex');
+Route::get('/products/show/{id}', 'ProductController@getShow');
+Route::post('/products/sold/{id}', 'ProductController@stockMore');
+Route::post('/products/restock/{id}', 'ProductController@stockLess');
