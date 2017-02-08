@@ -19,3 +19,7 @@ Route::get('/', 'ProductController@getIndex');
 Route::get('/products/show/{id}', 'ProductController@getShow');
 Route::post('/products/sold/{id}', 'ProductController@stockMore');
 Route::post('/products/restock/{id}', 'ProductController@stockLess');
+Route::post('/products', 'ProductController@PostProductAdd');
+Route::delete('/products/{id}', 'ProductController@deletProduct');
+// Route::post('/products', 'ProductController@modifProduct');
+// Route::post('/products', 'ProductController@deletProduct');
