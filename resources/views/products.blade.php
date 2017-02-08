@@ -21,16 +21,12 @@
 		<input class="ui button" value="Ajouter produit" type="submit">
 	</form>
 	<table class='ui inverted olive table'>
-		<th>ID</th>
 		<th>NOM</th>
 		<th>DESCRIPTION</th>
 		<th>PRICE</th>
 		<th>QUANTITER</th>
 		@foreach ($produits as $produit)
 		<tr>
-			<td>
-				{{$produit->id}}
-			</td>
 			<td>
 				<a href="/products/show/{{$produit->id}}">{{$produit->name}}</a>
 			</td>
